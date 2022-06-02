@@ -17,7 +17,7 @@ public class Event {
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "event")
     private Set<Guest> guests;
 
-    public Event(String date, int duration, String location, String title, Set<Guest> guests) {
+    public Event(String date, int duration, String location, String title) {
         this.date = date;
         this.duration = duration;
         this.location = location;

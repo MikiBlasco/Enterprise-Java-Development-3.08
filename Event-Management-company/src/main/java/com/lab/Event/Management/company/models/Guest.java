@@ -16,9 +16,11 @@ public class Guest {
     @JoinColumn(name = "event_id")
     private Event event;
 
-    public Guest(String name, Status status) {
+    public Guest(String name, Status status, Event event) {
+        this.id = id;
         this.name = name;
         this.status = status;
+        this.event = event;
     }
 
     public Guest() {

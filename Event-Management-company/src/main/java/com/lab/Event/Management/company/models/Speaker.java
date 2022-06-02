@@ -13,7 +13,7 @@ public class Speaker {
     @JoinColumn(name = "event_id")
     private Conference conference;
 
-    public Speaker(int id, String name, int presentationDuration, Conference conference) {
+    public Speaker(String name, int presentationDuration, Conference conference) {
         this.id = id;
         this.name = name;
         this.presentationDuration = presentationDuration;

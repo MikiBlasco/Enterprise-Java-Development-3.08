@@ -16,8 +16,7 @@ public class Guest {
     @JoinColumn(name = "event_id")
     private Event event;
 
-    public Guest(int id, String name, Status status) {
-        this.id = id;
+    public Guest(String name, Status status) {
         this.name = name;
         this.status = status;
     }

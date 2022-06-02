@@ -10,8 +10,8 @@ public class Conference extends Event {
     @OneToMany(fetch = FetchType.EAGER,  mappedBy = "conference")
     private Set<Speaker> speakers;
 
-    public Conference(int id, Date date, int duration, String location, String title, Set<Guest> guests, int id1, Set<Speaker> speakers) {
-        super(id, date, duration, location, title, guests);
+    public Conference(int id, String date, int duration, String location, String title, Set<Guest> guests, int id1, Set<Speaker> speakers) {
+        super(date, duration, location, title, guests);
         this.speakers = speakers;
     }
 

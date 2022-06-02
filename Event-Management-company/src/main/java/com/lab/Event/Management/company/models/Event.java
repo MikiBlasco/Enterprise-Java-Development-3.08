@@ -10,15 +10,14 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private Date date;
+    private String date;
     private int duration;
     private String location;
     private String title;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "event")
     private Set<Guest> guests;
 
-    public Event(int id, Date date, int duration, String location, String title, Set<Guest> guests) {
-        this.id = id;
+    public Event(String date, int duration, String location, String title, Set<Guest> guests) {
         this.date = date;
         this.duration = duration;
         this.location = location;
@@ -38,11 +37,11 @@ public class Event {
         this.id = id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

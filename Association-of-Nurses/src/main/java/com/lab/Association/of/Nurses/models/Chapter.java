@@ -1,7 +1,9 @@
 package com.lab.Association.of.Nurses.models;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Chapter {
@@ -10,11 +12,12 @@ public class Chapter {
     private Integer id;
     private String name;
     private String district;
+
     @OneToOne
-    @JoinColumn(name = "member")
+    @JoinColumn(name = "president_id")
     private Member president;
-    @ManyToOne
-    private List<Member> members;
+
+    //private Set<Member> members = new HashSet<>();
 
     public Chapter(){
 
@@ -25,7 +28,7 @@ public class Chapter {
         this.name = name;
         this.district = district;
         this.president = president;
-        this.members = members;
+        //this.members = members;
     }
 
     public int getId() {
@@ -60,11 +63,11 @@ public class Chapter {
         this.president = president;
     }
 
-    public List<Member> getMembers() {
+    /*public List<Member> getMembers() {
         return members;
     }
 
     public void setMembers(List<Member> members) {
         this.members = members;
-    }
+    }*/
 }

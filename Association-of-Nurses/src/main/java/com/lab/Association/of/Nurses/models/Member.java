@@ -2,16 +2,16 @@ package com.lab.Association.of.Nurses.models;
 
 import javax.persistence.*;
 import java.util.Date;
-
+@Entity
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @OneToOne
-    @JoinColumn(name = "invoice_id")
     private Integer id;
     private String name;
     private Status status;
     private Date renewalDate;
+    @OneToOne(mappedBy = "president")
+    private Chapter chapter; //en principio obviará esta columna (mappedby)
 
     public Member(){
 

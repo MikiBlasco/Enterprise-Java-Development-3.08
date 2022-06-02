@@ -10,7 +10,7 @@ public class Speaker {
     private String name;
     private int presentationDuration;
     @ManyToOne
-    @JoinColumn(name = "conference_id")
+    @JoinColumn(name = "event_id")
     private Conference conference;
 
     public Speaker(int id, String name, int presentationDuration, Conference conference) {

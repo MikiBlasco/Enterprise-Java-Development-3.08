@@ -1,5 +1,7 @@
 package com.lab.Association.of.Nurses.models;
 
+import org.hibernate.engine.profile.Fetch;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.List;
@@ -17,7 +19,8 @@ public class Chapter {
     @JoinColumn(name = "president_id")
     private Member president;
 
-    //private Set<Member> members = new HashSet<>();
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "chapter")
+    private Set<Member> members = new HashSet<>();
 
     public Chapter(){
 

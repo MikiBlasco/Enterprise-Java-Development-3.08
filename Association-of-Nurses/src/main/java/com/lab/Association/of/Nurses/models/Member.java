@@ -10,7 +10,8 @@ public class Member {
     private String name;
     private Status status;
     private Date renewalDate;
-    @OneToOne(mappedBy = "president")
+    @ManyToOne
+    @JoinColumn(name = "chapter_id")
     private Chapter chapter; //en principio obviará esta columna (mappedby)
 
     public Member(){
